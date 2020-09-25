@@ -51,3 +51,5 @@ void print_square(int size);
  * print triangle
  */
 void print_triangle(int size);
+
+void print_number(int n);
