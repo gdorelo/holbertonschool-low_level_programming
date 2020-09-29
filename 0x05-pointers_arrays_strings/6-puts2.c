@@ -1,10 +1,11 @@
 #include "holberton.h"
 
 /**
- * puts2 - prints every other character from a string
+ * puts2 - print every other character from a string
  * @str: character
  * Return: nothing
  */
+
 void puts2(char *str)
 {
 	int i;
