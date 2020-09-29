@@ -21,6 +21,6 @@ int _atoi(char *s)
 		i++;
 	}
 	while (s[i] != '\0' && (s[i] >= '0' && s[i] <= '9'))
-		retval = (retval * 10) + (s[i++] - '0');
+		retval = (retval * 10) - (s[i++] - '0');
 	return (retval * neg);
 }
