@@ -1,9 +1,9 @@
 #include "holberton.h"
-   /**
-    * rot13 - function to encode to rot13
-    * @s: array
-    * Return: the array encoded
-    */
+/**
+* rot13 - function to encode to rot13
+* @s: array
+* Return: the array encoded
+ */
 char *rot13(char *s)
 {
 	char chain1[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
