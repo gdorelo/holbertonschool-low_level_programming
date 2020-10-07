@@ -21,3 +21,9 @@ int _putchar(char c);
 int aux(int b, int a);
 
 int primefactor(int b, int a);
+
+int check(char *str, int len, int count);
+
+int starfun(char *s1, char *star);
+
+int strcmp(char *str1, char *str2);
