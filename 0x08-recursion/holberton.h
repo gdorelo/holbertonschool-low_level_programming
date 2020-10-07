@@ -19,3 +19,5 @@ int wildcmp(char *s1, char *s2);
 int _putchar(char c);
 
 int aux(int b, int a);
+
+int primefactor(int b, int a);
