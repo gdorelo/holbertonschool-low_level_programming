@@ -40,7 +40,7 @@ int starfun(char *s1, char *star)
 {
 	if (*s1 == '\0')
 		return (strcmp(s1, star));
-	return (starfun(s1 + 1, star));
+	return (strcmp(s1, star) || starfun(s1 + 1, star));
 }
 
 
