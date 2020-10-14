@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "holberton.h"
 /**
- * str_concat - a function that concatenates two strings, by gd
+ * str_concat - a function that concatenates two strings
  * @s1: character string
  * @s2: character string
  * Return: pointer that points to a newly allocated space in memory
