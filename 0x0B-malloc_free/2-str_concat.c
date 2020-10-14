@@ -1,20 +1,30 @@
-#include <stdlib.h>
 #include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
 /**
- * str_concat - a function that concatenates two strings
- * @s1: character string
- * @s2: character string
- * Return: pointer that points to a newly allocated space in memory
- *The function should return NULL on failure
- */
+ * _strlen - check the length of a string
+ * @str: pointer type char
+ * Return: The program will return the length of a string
+ **/
+int  _strlen(char *str)
+{
+	int i;
 
+	for (i = 0; str[i] != 00; i++)
+	{
+	}
+	return (i);
+}
+/**
+ * str_concat - This funcion will concatenate two strings coded by gd
+ * @s1: String 1
+ * @s2: String 2
+ * Return: Result of concatenate s1, s2 and null terminated
+ **/
 char *str_concat(char *s1, char *s2)
 {
-	char *a;
-	int i;
-	int j;
-	int c;
-	int d;
+	char *ptr;
+	int len_s1, len_s2, m, i, o;
 
 	if (s1 == NULL)
 	{
@@ -24,17 +34,23 @@ char *str_concat(char *s1, char *s2)
 	{
 		s2 = "";
 	}
-	for (i = 0; s1[i] != '\0'; i++)
-		;
-	for (j = 0; s2[j] != '\0'; j++)
-		;
-	a = malloc((i * sizeof(*s1)) + (j * sizeof(*s2)) + 1);
-	for (c = 0, d = 0; c < (i + j + 1); c++)
+
+	len_s1 = _strlen(s1);
+	len_s2 = _strlen(s2);
+	ptr = malloc(((len_s1) + (len_s2) + 1) * sizeof(char));
+
+	if (ptr == NULL)
 	{
-		if (c < i)
-			a[c] = s1[c];
-		else
-			a[c] = s2[d++];
+		return (NULL);
 	}
-	return (a);
+
+	for (m = 0; m < len_s1; m++)
+	{
+		ptr[m] = s1[m];
+	}
+	for (i = len_s1, o = 0; o <= len_s2; i++, o++)
+	{
+		ptr[i] = s2[o];
+	}
+	return (ptr);
 }
