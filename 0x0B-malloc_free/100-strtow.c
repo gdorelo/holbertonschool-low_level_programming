@@ -8,5 +8,7 @@
  */
 char **strtow(char *str)
 {
-	return;
+	if (!(str && *str))
+		return (NULL);
+	return (0);
 }
