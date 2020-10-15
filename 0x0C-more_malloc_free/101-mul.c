@@ -23,6 +23,13 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
+	num2 = atoi(argv[2]);
+	if (num2 == 0 && *argv[2] != 48)
+	{
+		printf("Error\n");
+		exit(98);
+	}
+
 	mul = num1 * num2;
 	printf("%ld\n", mul);
 	return(0);
