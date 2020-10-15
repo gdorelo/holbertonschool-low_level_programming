@@ -10,24 +10,20 @@
  */
 int main(int argc, char *argv[])
 {
-	unsigned long int mul, n1, n2;
+	long int num1, num2, mul;
 
 	if (argc != 3)
-		printf("Error\n");
-
-	n1 = atoi(argv[1]);
-
-	if (n1 == 0 && *argv[1] != 48)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-
-	else
+	num1 = atoi(argv[1]);
+	if (num1 == 0 && *argv[1] != 48)
 	{
-		n2 = atoi(argv[2]);
-		mul = n1 * n2;
-		printf("%lu\n", mul);
+		printf("Error\n");
+		exit(98);
 	}
-	return (0);
+	mul = num1 * num2;
+	printf("%ld\n", mul);
+	return(0);
 }
