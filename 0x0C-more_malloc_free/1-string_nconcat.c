@@ -8,7 +8,6 @@
  * @n: n bytesofstring 2
  * Return: pointer
  */
-int _strlen(char *s);
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
@@ -39,6 +38,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
  * @s: address of that variable
  * Return: return the length of a string
  */
+int _strlen(char *s);
+
 int _strlen(char *s)
 {
 	int length = 0;
