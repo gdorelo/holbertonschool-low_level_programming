@@ -8,26 +8,28 @@
  * @argv: type char argument of string.
  * Return: if not receive 2 arg, rt error
  */
+
 int main(int argc, char *argv[])
 {
-	unsigned long int mul, n1, n2;
-
-	if (argc != 3)
-		printf("Error\n");
-
-	n1 = atoi(argv[1]);
-
-	if (n1 == 0 && *argv[1] != 48)
-	{
-		printf("Error\n");
-		exit(98);
-	}
-
-	else
-	{
-		n2 = atoi(argv[2]);
-		mul = n1 * n2;
-		printf("%lu\n", mul);
-	}
-	return (0);
+        long int num1, num2, mul;
+        if (argc != 3)
+        {
+                printf("Error\n");
+                exit(98);
+        }
+        num1 = atoi(argv[1]);
+        if (num1 == 0 && *argv[1] != 48)
+        {
+                printf("Error\n");
+                exit(98);
+        }
+        num2 = atoi(argv[2]);
+        if (num2 == 0 && *argv[2] != 48)
+        {
+                printf("Error\n");
+                exit(98);
+        }
+        mul = num1 * num2;
+        printf("%ld\n", mul);
+        return (0);
 }
