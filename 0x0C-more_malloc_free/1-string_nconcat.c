@@ -14,20 +14,29 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (s1 == '\0')
 		s1 = "";
+
 	if (s2 == '\0')
 		s2 = "";
+
 	len1 = _strlen(s1);
 	len2 = _strlen(s2);
+
 	if (n >= len2)
 		n = len2;
+
 	p = malloc((len1 + n + 1) * sizeof(char));
+
 	if (p == '\0')
 		return (0);
+
 	for (c = 0; c < len1; c++)
 		p[c] = s1[c];
+
 	for (a = 0; a < n; a++)
 		p[c + a] = s2[a];
+
 	p[c + a] = '\0';
+
 	return (p);
 }
 /**
