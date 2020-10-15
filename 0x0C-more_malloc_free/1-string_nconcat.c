@@ -1,17 +1,14 @@
+#include "holberton.h"
 #include <stdlib.h>
-#include <stdio.h>
-
 /**
- * string_nconcat - concatenates two strings by gd
- * @s1:stirng 1
- * @s2:string 2
- * @n: n bytesofstring 2
- * Return: pointer
+ * *string_nconcat - concatenate two strings in a new memory address
+ * @n: n bytes to be concatenate from s2
+ * @s1: string one
+ * @s2: string two
+ * Return: a new string
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-
 	char *p;
 	unsigned int len1 = 0, len2 = 0, c, a;
 
@@ -38,7 +35,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
  * @s: address of that variable
  * Return: return the length of a string
  */
-
 int _strlen(char *s)
 {
 	int length = 0;
