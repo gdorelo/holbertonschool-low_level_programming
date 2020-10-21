@@ -21,11 +21,13 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(2);
 	}
-	while (i < (atoi(argv[1])))
-	{
+	while (i < (atoi(argv[1]) - 1))
+	{ 
 		printf("%02x ", *p);
 		i++;
 		p++;
 	}
+	p++;
+	printf("%02x\n", *p);
 	return (0);
 }
