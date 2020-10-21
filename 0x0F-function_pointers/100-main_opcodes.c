@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	}
 	while (i < (atoi(argv[1])))
 	{
-		printf("%02hhx ", *p);
+		printf("%02x ", *p);
 		i++;
 		p++;
 	}
