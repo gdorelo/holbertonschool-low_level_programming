@@ -27,6 +27,5 @@ int main(int argc, char *argv[])
 		i++;
 		p++;
 	}
-	printf("\n");
 	return (0);
 }
