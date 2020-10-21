@@ -22,12 +22,11 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 	while (i < (atoi(argv[1]) - 1))
-	{ 
+	{
 		printf("%02x ", *p);
 		i++;
 		p++;
 	}
-	p++;
 	printf("%02x\n", *p);
 	return (0);
 }
