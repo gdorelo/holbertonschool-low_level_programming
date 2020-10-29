@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "lists.h"
 /**
  * list_len - print the length list.
@@ -6,7 +7,7 @@
  */
 size_t list_len(const list_t *h)
 {
-	size_t counter = 0;
+	unsigned int counter = 0;
 
 	if (!h)
 		return (0);
