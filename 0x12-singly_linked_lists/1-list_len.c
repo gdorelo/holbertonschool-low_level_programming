@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "lists.h"
 /**
  * list_len.c - print all the elements in the list.
