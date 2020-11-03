@@ -13,7 +13,7 @@ size_t print_listint_safe(const listint_t *head)
 
 	if (!head)
 		return (98);
-	while (slow_p && fast_p && fast_p->next)
+	while (fast_p)
 	{
 		printf("[%p] %d\n", (void *)head, head->n);
 		head = head->next;
