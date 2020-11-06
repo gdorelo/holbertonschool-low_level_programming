@@ -1,31 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "lists.h"
+
 /**
- * free_listint_safe - free the list and set head to NULL
- * @h: the inital pointer to the linked list
- * Return: void return
+ * free_listint_safe - frees a linked list safely
+ * @h: holds a pointer to a pointer of a linked list
+ * Return: the size of the list
  */
+
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *slow, *fast, *freeptr;
-	size_t size = 0;
+	listint_t *slow_ptr, *fast_ptr, *free_ptr;
+	size_t size;
+
+	size = 0;
 
 	if (!h || *h == NULL)
 		return (0);
+	fast_ptr = (*h)->next;
+	slow_ptr = *h;
 
-	slow = *h;
-	fast = (*h)->next;
-
-	while (fast && fast < slow)
+	while (fast_ptr && fast_ptr < slow_ptr)
 	{
-		freeptr = slow;
-		fast = fast->next;
-		slow = slow->next;
+		free_ptr = slow_ptr;
+		fast_ptr = fast_ptr->next;
+		slow_ptr = slow_ptr->next;
 		size += 1;
-		free(freeptr);
+
+		free(free_ptr);
 	}
-	free(slow);
 	size += 1;
+	free(slow_ptr);
 	*h = NULL;
 	return (size);
-
 }
