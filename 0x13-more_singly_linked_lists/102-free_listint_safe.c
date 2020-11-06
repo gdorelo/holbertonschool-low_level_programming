@@ -1,61 +1,34 @@
 #include "lists.h"
-#include <stdbool.h>
+
 /**
- *free_listint_safe - free all the elements of a listint
- *@h: head of list
- *Return: number of elements
+ * free_listint_safe - frees a linked list safely
+ * @h: holds a pointer to a pointer of a linked list
+ * Return: the size of the list
  */
+
 size_t free_listint_safe(listint_t **h)
 {
+	listint_t *slow_ptr, *fast_ptr, *free_ptr;
+	size_t size;
 
-	unsigned int k = 0;
-	listint_t *aux = NULL, *fast_ptr, *slow_ptr;
-	bool is_loop;
+	size = 0;
 
-	if (h == NULL)
+	if (!h || *h == NULL)
 		return (0);
-	fast_ptr = *h;
+	fast_ptr = (*h)->next;
 	slow_ptr = *h;
-	is_loop = false;
 
-	while (slow_ptr && fast_ptr && fast_ptr->next)
+	while (fast_ptr && fast_ptr < slow_ptr)
 	{
-		slow_ptr = slow_ptr->next;
-		fast_ptr = fast_ptr->next->next;
-		if (slow_ptr == fast_ptr)
-		{
-			is_loop = true;
-			break;
-		}
-	}
-	if (is_loop)
-	{
-		slow_ptr = *h;
-		fast_ptr = *h;
+		free_ptr = slow_ptr;
 		fast_ptr = fast_ptr->next;
-		while (fast_ptr && fast_ptr < slow_ptr)
-		{
-			aux = slow_ptr;
-			fast_ptr = fast_ptr->next;
-			slow_ptr = slow_ptr->next;
-			k++;
-			free(aux);
-		}
-		free(slow_ptr);
-		k++;
-		*h = NULL;
-		return (k);
+		slow_ptr = slow_ptr->next;
+		size += 1;
+
+		free(free_ptr);
 	}
-	else if (!is_loop)
-	{
-		k = 0;
-		while (*h)
-		{
-			aux = *h;
-			*h = (*h)->next;
-			k++;
-			free(aux);
-		}
-	}
-	return (k);
+	size += 1;
+	free(slow_ptr);
+	*h = NULL;
+	return (size);
 }

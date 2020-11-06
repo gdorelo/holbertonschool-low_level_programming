@@ -1,27 +1,82 @@
-#include <stdio.h>
 #include "lists.h"
 /**
- * print_listint_safe - print all the elements in the list.
- * @head: the inital pointer to the linked list
- * Return: the number of nodes
+ *loopexist - check if loop exist whitin list
+ *@head: head of list
+ *@pl: pointer to loop value
+ *@pnumber: pointer to number
+ *Return: pointer to fast loop
+ */
+const listint_t *loopexist(const listint_t *head, int *pl, int *pnumber);
+/**
+ *print_listint_safe - prints all the elements of a listint
+ *@head: head of list
+ *Return: number of elements
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t counter = 0;
-	const listint_t *slow_p = head;
-	const listint_t *fast_p = head;
 
-	if (!head)
-		return (98);
-	while (fast_p)
+	int loop = 0, *pl = &loop;
+	int number = 0, *pnumber = &number, node = 0;
+	const listint_t *sp = head, *fp = head, *hl = NULL;
+
+	if (head == NULL)
 	{
-		printf("[%p] %d\n", (void *)head, head->n);
-		head = head->next;
-		slow_p = slow_p->next; 
-		fast_p = fast_p->next->next; 
-		counter++;
-		if (slow_p == fast_p)
-			break;
+		return (0);
+		exit(98);
 	}
-	return (counter);
+	fp = loopexist(head, pl, pnumber);
+	if (loop == 1)
+	{
+		sp = head;
+		while (fp != sp)
+		{
+			sp = sp->next;
+			fp = fp->next;
+			number++;
+		}
+		sp = head;
+		node = number;
+		while (node > 0)
+		{
+			printf("[%p] %d\n", (void *)sp, sp->n);
+			sp = sp->next;
+			node--;
+			hl = sp;
+		}
+		printf("-> [%p] %d\n", (void *)hl, hl->n);
+	}
+	else
+	{
+		while (head)
+		{
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
+		}
+	}
+	return (number);
+}
+/**
+ *loopexist - check if loop exist whitin list
+ *@head: head of list
+ *@pl: pointer to loop value
+ *@pnumber: pointer to number
+ *Return: pointer to fast loop
+ */
+const listint_t *loopexist(const listint_t *head, int *pl, int *pnumber)
+{
+	const listint_t *fp = head, *sp = head;
+
+	while (fp)
+	{
+		sp = sp->next;
+		fp = fp->next->next;
+		(*pnumber)++;
+		if (sp == fp)
+		{
+			*pl = 1;
+			return (fp);
+		}
+	}
+	*pl = 0;
+	return (NULL);
 }
