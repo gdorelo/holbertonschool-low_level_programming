@@ -6,12 +6,26 @@
  */
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *aux;
-	size_t i = 0;
+	listint_t *slow, *fast, *freeptr;
+	size_t size = 0;
 
-	if (!h)
+	if (!h || *h == NULL)
 		return (0);
-	while (*h)
-		aux = *h, *h = (*h)->next, free(aux), i++;
-	return (i);
+
+	slow = *h;
+	fast = (*h)->next;
+
+	while (fast && fast < slow)
+	{
+		freeptr = slow;
+		fast = fast->next;
+		slow = slow->next;
+		size += 1;
+		free(freeptr);
+	}
+	free(slow);
+	size += 1;
+	*h = NULL;
+	return (size);
+
 }
