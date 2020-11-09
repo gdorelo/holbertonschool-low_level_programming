@@ -16,7 +16,7 @@ int cpfile(char *src, char *dest)
 		dprintf(STDERR_FILENO,
 			"Error: Can't read from file %s\n", src);
 		exit(98);
-	}	
+	}
 	fd2 = open(dest, O_WRONLY | O_TRUNC | O_CREAT, 0664);
 	while ((nread = read(fd1, buffer, BUFSIZ)) > 0)
 	{
@@ -60,7 +60,6 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	
 	cpfile(av[1], av[2]);
 	return (0);
 }
