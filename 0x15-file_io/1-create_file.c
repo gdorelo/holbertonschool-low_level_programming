@@ -1,12 +1,10 @@
 #include "holberton.h"
-
 /**
 * create_file - creates a file
 * @filename: the filename to create
 * @text_content: a NULL terminated string to write to the file
 * Return: 1 (Success),  -1 (failure)
 */
-
 int create_file(const char *filename, char *text_content)
 {
 	int fd, i = 0, len;
