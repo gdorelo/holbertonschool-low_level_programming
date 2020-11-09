@@ -17,6 +17,7 @@ int cpfile(char *src, char *dest)
 			"Error: Can't read from file %s\n", src);
 		exit(98);
 	}
+	
 	fd2 = open(dest, O_WRONLY | O_TRUNC | O_CREAT, 0664);
 	while ((nread = read(fd1, buffer, BUFSIZ)) > 0)
 	{
