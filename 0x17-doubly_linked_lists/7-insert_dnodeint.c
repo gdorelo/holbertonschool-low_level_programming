@@ -36,7 +36,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
  * dlistint_len - function that counts and returns
  * the nodes in a Double linked list
  * @h: pointer to first node (head)
- * Return: total number nodes in the list
+ * Return: total number of nodes in the list
  */
 size_t dlistint_len(const dlistint_t *h)
 {
