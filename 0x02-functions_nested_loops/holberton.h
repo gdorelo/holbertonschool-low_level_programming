@@ -1,64 +1,25 @@
-/**
- * _putchar - putchar
- */
+#ifndef HOLBERTON_H
+#define HOLBERTON_H
+#include <stdlib.h>
 int _putchar(char c);
-
-/**
- * print alphabet in lowercase
- */
-void print_alphabet(void);
-
-/**
- * print alphabet ten times
- */
-void print_alphabet_x10(void);
-
-/**
- * check for lowercase character
- */
 int _islower(int c);
-
-/**
- * check for alphabetic character
- */
 int _isalpha(int c);
+int _abs(int n);
+int _isupper(int c);
+int _isdigit(int c);
+int _strlen(char *s);
+void _puts(char *s);
+char *_strcpy(char *dest, char *src);
+int _atoi(char *s);
+char *_strcat(char *dest, char *src);
+char *_strncat(char *dest, char *src, int n);
+char *_strncpy(char *dest, char *src, int n);
+int _strcmp(char *s1, char *s2);
+char *_memset(char *s, char b, unsigned int n);
+char *_memcpy(char *dest, char *src, unsigned int n);
+char *_strchr(char *s, char c);
+unsigned int _strspn(char *s, char *accept);
+char *_strpbrk(char *s, char *accept);
+char *_strstr(char *haystack, char *needle);
 
-/**
- * print the sign of a number
- */
-int print_sign(int n);
-
-/**
- * computer absolute value of integer
- */
-int _abs(int);
-
-/**
- * print last digit of a number
- */
-int print_last_digit(int);
-
-/**
- *prints every minute of the day of Jack Bauer, starting from 00:00 to 23:59
- */
-void jack_bauer(void);
-
-/**
- * print 9 times table, starting with 0
- */
-void times_table(void);
-
-/**
- * add two integers and return the result
- */
-int add(int, int);
-
-/**
- * print all natural numbers from n to 98, followed by a new line.
- */
-void print_to_98(int n);
-
-/**
- * print the n times table, starting with 0
- */
-void print_times_table(int n);
+#endif
